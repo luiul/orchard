@@ -1,3 +1,7 @@
+"""CLI surface. Only offline-safe paths are tested here: help, version, and
+env validation (which exits before any network/AWS call). Live behavior is
+covered by the module tests with captured fixtures plus manual sync runs."""
+
 from typer.testing import CliRunner
 
 from pi_model_sync.cli import app
@@ -26,8 +30,13 @@ def test_version_flag():
     assert "pi-model-sync" in result.output
 
 
-def test_stubs_report_not_implemented():
-    for cmd in SUBCOMMANDS:
-        result = runner.invoke(app, [cmd])
-        assert result.exit_code == 1
-        assert "not implemented yet" in result.output
+def test_invalid_probe_timeout_env_exits_2():
+    result = runner.invoke(app, ["report", "--no-probe"], env={"PROBE_TIMEOUT": "abc"})
+    assert result.exit_code == 2
+    assert "PROBE_TIMEOUT must be a positive integer" in result.output
+
+
+def test_sync_help_documents_parity_flags():
+    result = runner.invoke(app, ["sync", "--help"])
+    for flag in ("--dry-run", "--no-probe", "--strict"):
+        assert flag in result.output

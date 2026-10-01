@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "id": "claude-sonnet-5",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai",
+      "mode": "chat",
+      "max_input_tokens": 1000000,
+      "max_output_tokens": 128000
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai",
+      "mode": "chat",
+      "max_input_tokens": 1000000,
+      "max_output_tokens": 128000
+    },
+    {
+      "id": "claude-opus-5-5",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai",
+      "mode": "chat",
+      "max_input_tokens": 1000000,
+      "max_output_tokens": 128000
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai",
+      "mode": "chat",
+      "max_input_tokens": 200000,
+      "max_output_tokens": 64000
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai",
+      "mode": "chat",
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    {
+      "id": "gpt-6-luna",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai",
+      "mode": "chat",
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    {
+      "id": "gpt-6-sol",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai",
+      "mode": "chat",
+      "max_input_tokens": 922000,
+      "max_output_tokens": 128000
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "moonshotai/Kimi-K3",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "zai-org/GLM-5.3",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "zai-org/GLM-5.3-Flash",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "object": "model",
+      "created": 1677610602,
+      "owned_by": "openai"
+    }
+  ],
+  "object": "list"
+}

@@ -1,0 +1,889 @@
+{
+    "inferenceProfileSummaries": [
+        {
+            "inferenceProfileName": "APAC Anthropic Claude 3 Sonnet",
+            "description": "Routes requests to Anthropic Claude 3 Sonnet in ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2 and ap-south-1.",
+            "createdAt": "2024-11-01T00:00:00+00:00",
+            "updatedAt": "2024-11-04T17:55:17.035362+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.anthropic.claude-3-sonnet-20240229-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0"
+                }
+            ],
+            "inferenceProfileId": "apac.anthropic.claude-3-sonnet-20240229-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "APAC Anthropic Claude 3.5 Sonnet",
+            "description": "Routes requests to Anthropic Claude 3.5 Sonnet in ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2 and ap-south-1.",
+            "createdAt": "2024-11-01T00:00:00+00:00",
+            "updatedAt": "2024-11-04T17:56:03.243427+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.anthropic.claude-3-5-sonnet-20240620-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0"
+                }
+            ],
+            "inferenceProfileId": "apac.anthropic.claude-3-5-sonnet-20240620-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "APAC Anthropic Claude 3 Haiku",
+            "description": "Routes requests to Anthropic Claude 3 Haiku in ap-northeast-1, ap-northeast-2, ap-southeast-2, ap-south-1 and ap-southeast-1.",
+            "createdAt": "2024-11-01T00:00:00+00:00",
+            "updatedAt": "2025-02-05T01:03:47.154111+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.anthropic.claude-3-haiku-20240307-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
+                }
+            ],
+            "inferenceProfileId": "apac.anthropic.claude-3-haiku-20240307-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "APAC Anthropic Claude 3.5 Sonnet v2",
+            "description": "Routes requests to Anthropic Claude 3.5 Sonnet v2 in ap-northeast-1, ap-northeast-2, ap-northeast-3, ap-south-1, ap-southeast-1 and ap-southeast-2.",
+            "createdAt": "2025-02-17T00:00:00+00:00",
+            "updatedAt": "2025-02-21T00:05:08.238501+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.anthropic.claude-3-5-sonnet-20241022-v2:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-3-5-sonnet-20241022-v2:0"
+                }
+            ],
+            "inferenceProfileId": "apac.anthropic.claude-3-5-sonnet-20241022-v2:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "APAC Nova Micro",
+            "description": "Routes requests to Nova Micro in ap-southeast-2, ap-northeast-1, ap-south-1, ap-northeast-2, ap-southeast-1 and ap-northeast-3.",
+            "createdAt": "2025-02-22T10:00:00+00:00",
+            "updatedAt": "2025-07-02T19:54:59.078437+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.amazon.nova-micro-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/amazon.nova-micro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/amazon.nova-micro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/amazon.nova-micro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/amazon.nova-micro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/amazon.nova-micro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/amazon.nova-micro-v1:0"
+                }
+            ],
+            "inferenceProfileId": "apac.amazon.nova-micro-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "APAC Nova Lite",
+            "description": "Routes requests to Nova Lite in ap-southeast-2, ap-northeast-1, ap-south-1, ap-northeast-2, ap-southeast-1 and ap-northeast-3.",
+            "createdAt": "2025-02-22T10:00:00+00:00",
+            "updatedAt": "2025-07-02T23:25:36.529759+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.amazon.nova-lite-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/amazon.nova-lite-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/amazon.nova-lite-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/amazon.nova-lite-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/amazon.nova-lite-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/amazon.nova-lite-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/amazon.nova-lite-v1:0"
+                }
+            ],
+            "inferenceProfileId": "apac.amazon.nova-lite-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "APAC Nova Pro",
+            "description": "Routes requests to Nova Pro in ap-southeast-2, ap-northeast-1, ap-south-1, ap-northeast-2, ap-southeast-1 and ap-northeast-3.",
+            "createdAt": "2025-02-22T10:00:00+00:00",
+            "updatedAt": "2025-07-03T16:46:04.706942+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.amazon.nova-pro-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/amazon.nova-pro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/amazon.nova-pro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/amazon.nova-pro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/amazon.nova-pro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/amazon.nova-pro-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/amazon.nova-pro-v1:0"
+                }
+            ],
+            "inferenceProfileId": "apac.amazon.nova-pro-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "JP Anthropic Claude Sonnet 4.5",
+            "description": "Routes requests to Claude Sonnet 4.5 in ap-northeast-3, ap-northeast-1.",
+            "createdAt": "2025-09-27T02:18:20.378142+00:00",
+            "updatedAt": "2025-09-28T06:44:23.623205+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/jp.anthropic.claude-sonnet-4-5-20250929-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0"
+                }
+            ],
+            "inferenceProfileId": "jp.anthropic.claude-sonnet-4-5-20250929-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Cohere Embed v4",
+            "description": "Routes requests to Embed v4 globally across all supported AWS Regions.",
+            "createdAt": "2025-10-01T01:19:51+00:00",
+            "updatedAt": "2025-10-01T01:19:51+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.cohere.embed-v4:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/cohere.embed-v4:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/cohere.embed-v4:0"
+                }
+            ],
+            "inferenceProfileId": "global.cohere.embed-v4:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "APAC Claude Sonnet 4",
+            "description": "Routes requests to Claude Sonnet 4 in ap-northeast-1, ap-northeast-2, ap-northeast-3, ap-south-1, ap-south-2, ap-southeast-1, ap-southeast-2 and ap-southeast-4.",
+            "createdAt": "2025-05-20T00:00:00+00:00",
+            "updatedAt": "2025-10-07T06:00:31.481508+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/apac.anthropic.claude-sonnet-4-20250514-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-2::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-1::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-south-2::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-1::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-southeast-4::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                }
+            ],
+            "inferenceProfileId": "apac.anthropic.claude-sonnet-4-20250514-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "JP Anthropic Claude Haiku 4.5",
+            "description": "Routes requests to Claude Haiku 4.5 in ap-northeast-3, ap-northeast-1.",
+            "createdAt": "2025-10-13T23:54:41.903688+00:00",
+            "updatedAt": "2025-10-13T23:54:41.903688+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/jp.anthropic.claude-haiku-4-5-20251001-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
+                }
+            ],
+            "inferenceProfileId": "jp.anthropic.claude-haiku-4-5-20251001-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "GLOBAL TwelveLabs Pegasus v1.2",
+            "description": "Routes requests to Pegasus v1.2 globally across all supported AWS Regions.",
+            "createdAt": "2025-11-20T00:11:57.306471+00:00",
+            "updatedAt": "2025-11-20T00:11:57.306471+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.twelvelabs.pegasus-1-2-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/twelvelabs.pegasus-1-2-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/twelvelabs.pegasus-1-2-v1:0"
+                }
+            ],
+            "inferenceProfileId": "global.twelvelabs.pegasus-1-2-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "GLOBAL Amazon Nova 2 Lite",
+            "description": "Routes requests to Amazon Nova 2 Lite globally across all supported AWS Regions.",
+            "createdAt": "2025-11-04T23:38:27.673287+00:00",
+            "updatedAt": "2025-11-22T21:05:43.557781+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.amazon.nova-2-lite-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/amazon.nova-2-lite-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/amazon.nova-2-lite-v1:0"
+                }
+            ],
+            "inferenceProfileId": "global.amazon.nova-2-lite-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "JP Amazon Nova 2 Lite",
+            "description": "Routes requests to Amazon Nova 2 Lite in ap-northeast-1 and ap-northeast-3.",
+            "createdAt": "2025-11-07T04:07:24.700064+00:00",
+            "updatedAt": "2025-11-22T21:05:50.830278+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/jp.amazon.nova-2-lite-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/amazon.nova-2-lite-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/amazon.nova-2-lite-v1:0"
+                }
+            ],
+            "inferenceProfileId": "jp.amazon.nova-2-lite-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "GLOBAL Anthropic Claude Opus 4.5",
+            "description": "Routes requests to Anthropic Claude Opus 4.5 globally across all supported AWS Regions.",
+            "createdAt": "2025-11-22T20:48:30.041725+00:00",
+            "updatedAt": "2025-12-12T21:57:04.703816+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-opus-4-5-20251101-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-opus-4-5-20251101-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-4-5-20251101-v1:0"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-opus-4-5-20251101-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "JP Anthropic Claude Sonnet 4.6",
+            "description": "Routes requests to Claude Sonnet 4.6 in ap-northeast-3, ap-northeast-1.",
+            "createdAt": "2026-02-13T21:55:51.777052+00:00",
+            "updatedAt": "2026-02-13T21:55:51.777052+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/jp.anthropic.claude-sonnet-4-6",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-sonnet-4-6"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-4-6"
+                }
+            ],
+            "inferenceProfileId": "jp.anthropic.claude-sonnet-4-6",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "JP Anthropic Claude Opus 4.7",
+            "description": "Routes requests to Claude Opus 4.7 in ap-northeast-3, ap-northeast-1.",
+            "createdAt": "2026-04-15T23:13:25.514504+00:00",
+            "updatedAt": "2026-04-15T23:13:25.514504+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/jp.anthropic.claude-opus-4-7",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-opus-4-7"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-4-7"
+                }
+            ],
+            "inferenceProfileId": "jp.anthropic.claude-opus-4-7",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Opus 4.6",
+            "description": "Routes requests to Anthropic Claude Opus 4.6 globally across all supported AWS Regions.",
+            "createdAt": "2026-02-05T01:47:35.068833+00:00",
+            "updatedAt": "2026-04-21T17:50:36.929131+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-opus-4-6-v1",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-opus-4-6-v1"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-4-6-v1"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-opus-4-6-v1",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Claude Sonnet 4.5",
+            "description": "Routes requests to Claude Sonnet 4.5 globally across all supported AWS Regions.",
+            "createdAt": "2025-09-27T02:31:14+00:00",
+            "updatedAt": "2026-04-21T20:25:24.882110+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Claude Sonnet 4",
+            "description": "Routes requests to Claude Sonnet 4 globally across all supported AWS Regions.",
+            "createdAt": "2025-08-25T00:00:00+00:00",
+            "updatedAt": "2026-04-23T22:38:24.723983+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-sonnet-4-20250514-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-sonnet-4-20250514-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "JP Anthropic Claude Opus 4.8",
+            "description": "Routes requests to Claude Opus 4.8 in ap-northeast-3, ap-northeast-1.",
+            "createdAt": "2026-05-27T22:18:29.387234+00:00",
+            "updatedAt": "2026-05-27T22:18:29.387234+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/jp.anthropic.claude-opus-4-8",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-opus-4-8"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-4-8"
+                }
+            ],
+            "inferenceProfileId": "jp.anthropic.claude-opus-4-8",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Haiku 4.5",
+            "description": "Routes requests to Anthropic Claude Haiku 4.5 globally across all supported AWS Regions.",
+            "createdAt": "2025-10-13T23:55:22+00:00",
+            "updatedAt": "2026-06-29T21:51:41.613712+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-haiku-4-5-20251001-v1:0",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Fable 5",
+            "description": "Routes requests to Anthropic Claude Fable 5 globally across all supported AWS Regions.",
+            "createdAt": "2026-06-09T17:15:13.368274+00:00",
+            "updatedAt": "2026-07-01T20:52:42.621993+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-fable-5",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-fable-5"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-fable-5"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-fable-5",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT-5.6 Sol",
+            "description": "Routes requests to GPT-5.6 Sol globally across all supported AWS Regions.",
+            "createdAt": "2026-08-13T21:37:13.770991+00:00",
+            "updatedAt": "2026-08-13T21:37:13.770991+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-5.6-sol",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-5.6-sol"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-5.6-sol"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-5.6-sol",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT-5.6 Terra",
+            "description": "Routes requests to GPT-5.6 Terra globally across all supported AWS Regions.",
+            "createdAt": "2026-08-13T21:48:50.389414+00:00",
+            "updatedAt": "2026-08-13T21:48:50.389414+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-5.6-terra",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-5.6-terra"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-5.6-terra"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-5.6-terra",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT-5.6 Luna",
+            "description": "Routes requests to GPT-5.6 Luna globally across all supported AWS Regions.",
+            "createdAt": "2026-08-13T21:59:06.792753+00:00",
+            "updatedAt": "2026-08-13T21:59:06.792753+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-5.6-luna",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-5.6-luna"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-5.6-luna"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-5.6-luna",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global xAI Grok 4.6",
+            "description": "Routes requests to Grok 4.6 globally across all supported AWS Regions.",
+            "createdAt": "2026-08-18T23:30:25.922499+00:00",
+            "updatedAt": "2026-08-18T23:30:25.922499+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.xai.grok-4.6",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/xai.grok-4.6"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/xai.grok-4.6"
+                }
+            ],
+            "inferenceProfileId": "global.xai.grok-4.6",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Fable 5.1",
+            "description": "Routes requests to Anthropic Claude Fable 5.1 globally across all supported AWS Regions.",
+            "createdAt": "2026-08-28T19:56:00.963180+00:00",
+            "updatedAt": "2026-09-01T23:53:25.801943+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-fable-5-1",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-fable-5-1"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-fable-5-1"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-fable-5-1",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Moonshot AI Kimi K3",
+            "description": "Routes requests to Kimi K3 globally across all supported AWS Regions.",
+            "createdAt": "2026-09-10T18:08:19.342938+00:00",
+            "updatedAt": "2026-09-10T18:08:19.342938+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.moonshotai.kimi-k3",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/moonshotai.kimi-k3"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/moonshotai.kimi-k3"
+                }
+            ],
+            "inferenceProfileId": "global.moonshotai.kimi-k3",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT-6 Sol",
+            "description": "Routes requests to GPT-6 Sol globally across all supported AWS Regions.",
+            "createdAt": "2026-09-21T21:26:12.779851+00:00",
+            "updatedAt": "2026-09-21T21:26:12.779851+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-6-sol",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-6-sol"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-6-sol"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-6-sol",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT-6 Luna",
+            "description": "Routes requests to GPT-6 Luna globally across all supported AWS Regions.",
+            "createdAt": "2026-09-21T21:38:21.225481+00:00",
+            "updatedAt": "2026-09-21T21:38:21.225481+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-6-luna",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-6-luna"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-6-luna"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-6-luna",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "JP Anthropic Claude Opus 5.5",
+            "description": "Routes requests to Anthropic Claude Opus 5.5 in ap-northeast-1 and ap-northeast-3.",
+            "createdAt": "2026-09-22T01:37:58.186842+00:00",
+            "updatedAt": "2026-09-22T15:48:41.400512+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/jp.anthropic.claude-opus-5-5",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-3::foundation-model/anthropic.claude-opus-5-5"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-5-5"
+                }
+            ],
+            "inferenceProfileId": "jp.anthropic.claude-opus-5-5",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Opus 5.5",
+            "description": "Routes requests to Anthropic Claude Opus 5.5 globally across all supported AWS Regions.",
+            "createdAt": "2026-09-22T01:37:58.340051+00:00",
+            "updatedAt": "2026-09-22T15:48:47.649155+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-opus-5-5",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-opus-5-5"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-5-5"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-opus-5-5",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT 5.4",
+            "description": "Routes requests to GPT 5.4 globally across all supported AWS Regions.",
+            "createdAt": "2026-09-23T03:18:36.507709+00:00",
+            "updatedAt": "2026-09-23T03:18:36.507709+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-5.4",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-5.4"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-5.4"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-5.4",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT 5.5",
+            "description": "Routes requests to GPT 5.5 globally across all supported AWS Regions.",
+            "createdAt": "2026-09-23T03:27:30.700222+00:00",
+            "updatedAt": "2026-09-23T03:27:30.700222+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-5.5",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-5.5"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-5.5"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-5.5",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Opus 5",
+            "description": "Routes requests to Anthropic Claude Opus 5 globally across all supported AWS Regions.",
+            "createdAt": "2026-07-21T20:45:17.957938+00:00",
+            "updatedAt": "2026-09-23T23:44:32.444049+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-opus-5",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-opus-5"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-5"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-opus-5",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Opus 4.8",
+            "description": "Routes requests to Anthropic Claude Opus 4.8 globally across all supported AWS Regions.",
+            "createdAt": "2026-05-27T22:18:29.499263+00:00",
+            "updatedAt": "2026-09-24T00:25:13.714159+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-opus-4-8",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-opus-4-8"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-4-8"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-opus-4-8",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Sonnet 5",
+            "description": "Routes requests to Anthropic Claude Sonnet 5 globally across all supported AWS Regions.",
+            "createdAt": "2026-06-30T05:38:00.172124+00:00",
+            "updatedAt": "2026-09-24T00:37:44.536427+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-sonnet-5",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-sonnet-5"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-5"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-sonnet-5",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Opus 4.7",
+            "description": "Routes requests to Anthropic Claude Opus 4.7 globally across all supported AWS Regions.",
+            "createdAt": "2026-04-15T23:13:25.662598+00:00",
+            "updatedAt": "2026-09-24T00:51:32.371957+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-opus-4-7",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-opus-4-7"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-opus-4-7"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-opus-4-7",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global xAI Grok 4.7",
+            "description": "Routes requests to Grok 4.7 globally across all supported AWS Regions.",
+            "createdAt": "2026-09-25T17:51:35.477802+00:00",
+            "updatedAt": "2026-09-25T17:51:35.477802+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.xai.grok-4.7",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/xai.grok-4.7"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/xai.grok-4.7"
+                }
+            ],
+            "inferenceProfileId": "global.xai.grok-4.7",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT-6 Astra",
+            "description": "Routes requests to OpenAI GPT-6 Astra globally across all supported AWS Regions.",
+            "createdAt": "2026-09-08T19:55:12.513078+00:00",
+            "updatedAt": "2026-09-28T20:05:39.423211+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-6-astra",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-6-astra"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-6-astra"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-6-astra",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global OpenAI GPT-6.1 Sol",
+            "description": "Routes requests to GPT-6.1 Sol globally across all supported AWS Regions.",
+            "createdAt": "2026-09-29T01:53:23.540356+00:00",
+            "updatedAt": "2026-09-29T01:53:23.540356+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.openai.gpt-6.1-sol",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/openai.gpt-6.1-sol"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/openai.gpt-6.1-sol"
+                }
+            ],
+            "inferenceProfileId": "global.openai.gpt-6.1-sol",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Sonnet 5.5",
+            "description": "Routes requests to Anthropic Claude Sonnet 5.5 globally across all supported AWS Regions.",
+            "createdAt": "2026-09-28T05:10:47.011653+00:00",
+            "updatedAt": "2026-09-29T02:34:37.768250+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-sonnet-5-5",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-sonnet-5-5"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-5-5"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-sonnet-5-5",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        },
+        {
+            "inferenceProfileName": "Global Anthropic Claude Sonnet 4.6",
+            "description": "Routes requests to Anthropic Claude Sonnet 4.6 globally across all supported AWS Regions.",
+            "createdAt": "2026-02-13T21:55:52.053768+00:00",
+            "updatedAt": "2026-09-30T02:23:26.288903+00:00",
+            "inferenceProfileArn": "arn:aws:bedrock:ap-northeast-1:951719175506:inference-profile/global.anthropic.claude-sonnet-4-6",
+            "models": [
+                {
+                    "modelArn": "arn:aws:bedrock:::foundation-model/anthropic.claude-sonnet-4-6"
+                },
+                {
+                    "modelArn": "arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-sonnet-4-6"
+                }
+            ],
+            "inferenceProfileId": "global.anthropic.claude-sonnet-4-6",
+            "status": "ACTIVE",
+            "type": "SYSTEM_DEFINED"
+        }
+    ]
+}
