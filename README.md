@@ -2,9 +2,9 @@
 
 **TLDR:** pi-model-sync finds the models your [pi](https://github.com/earendil-works/pi) setup can actually use right now, across both providers (`amazon-bedrock` and `ai-model-router`), and rewrites pi's model config to match reality.
 
-Status: early development. The commands below are the agreed interface; the pipeline behind them is being built. Track progress in the [issues](https://github.com/luiul/pi-model-sync/issues).
+Status: early development. The commands below are the agreed interface; the pipeline behind them is being built. Track progress in the [issues](https://github.com/luiul/pi-model-sync/issues); design and decisions live in the [dotfiles epic](https://github.com/luiul/dotfiles/issues/27).
 
-## Why
+## Why pi-model-sync
 
 pi's model picker drifts away from reality:
 
@@ -14,6 +14,8 @@ pi's model picker drifts away from reality:
 The result: you pick a model and the call fails, while working models stay invisible.
 
 pi-model-sync fixes this by measuring instead of assuming. It fetches what each provider actually offers, probes every candidate live through pi, and reports the result in one table.
+
+Once it reaches parity, pi-model-sync replaces the bash script `pi/.pi/agent/bin/sync-enabled-models.sh` in https://github.com/luiul/dotfiles.
 
 ## Use cases
 
@@ -38,7 +40,9 @@ pi-model-sync fixes this by measuring instead of assuming. It fetches what each 
 
 **Safety rules.** The tool never runs `aws sso login` (it checks once, prints the fix, and exits). Probes are classified by output text, never by exit code (pi exits 0 even when a model call fails). A circuit breaker aborts the run on repeated systemic failures instead of hammering a broken account.
 
-## Install
+The full vocabulary, with every term mapped to a concrete file, command, or API, lives in `docs/model-availability-vocabulary.md` in https://github.com/luiul/dotfiles.
+
+## Installation
 
 ```sh
 uv tool install ~/projects/personal/pi-model-sync
@@ -50,7 +54,7 @@ Or run without installing:
 uv run --project ~/projects/personal/pi-model-sync pi-model-sync --help
 ```
 
-## Commands
+## Usage
 
 - `pi-model-sync fetch`: refresh all sources (pi catalog, Bedrock entitlements per scanned region, router deployment).
 - `pi-model-sync probe`: probe candidates live through pi, with a circuit breaker for systemic failures.
@@ -66,8 +70,6 @@ uv run ruff check
 uv run ty check
 ```
 
-## Links
+## License
 
-- Design, decisions, and implementation plan: https://github.com/luiul/dotfiles/issues/27
-- Vocabulary (the ladder and all terms, in detail): `docs/model-availability-vocabulary.md` in https://github.com/luiul/dotfiles
-- Replaces the bash script `pi/.pi/agent/bin/sync-enabled-models.sh` once it reaches parity.
+MIT, see [LICENSE](LICENSE).
