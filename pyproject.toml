@@ -1,0 +1,54 @@
+[project]
+name = "pi-model-sync"
+version = "0.1.0"
+description = "Discover and sync the models pi can actually use, across amazon-bedrock and ai-model-router"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "Luis Aceituno", email = "aceitunosoriano@gmail.com" }]
+keywords = ["pi", "bedrock", "models", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+]
+dependencies = ["typer>=0.12", "rich>=13"]
+
+[project.urls]
+Repository = "https://github.com/luiul/pi-model-sync"
+Issues = "https://github.com/luiul/pi-model-sync/issues"
+
+[project.scripts]
+pi-model-sync = "pi_model_sync.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pi_model_sync"]
+
+[dependency-groups]
+dev = ["ruff>=0.6", "ty", "pytest>=8"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["E501", "B008"]
+
+[tool.ty.src]
+include = ["src/pi_model_sync"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-q", "--strict-markers"]
