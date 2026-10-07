@@ -1,86 +1,70 @@
-# pi-model-sync
+# Orchard
 
-**TLDR:** pi-model-sync finds the models your [pi](https://github.com/earendil-works/pi) setup can actually use right now, across both providers (`amazon-bedrock` and `ai-model-router`), and rewrites pi's model config to match reality.
+**TLDR:** Orchard checks which models Pi can call through Amazon Bedrock and the HelloFresh AI Model Router. It discovers models in every configured Bedrock region, probes them through Pi, and reports what worked. Use Pi's `/model` command to choose a model.
 
-Design and decisions live in the [dotfiles epic](https://github.com/luiul/dotfiles/issues/27); implementation was tracked in the [issues](https://github.com/luiul/pi-model-sync/issues).
+Orchard is a small Go command for this Pi setup. It replaces the older Python `pi-model-sync` after the new path is verified. Development and earlier decisions are tracked in [the Orchard issue](https://github.com/luiul/orchard/issues/9).
 
-## Why pi-model-sync
+## Why it exists
 
-pi's model picker drifts away from reality:
+Pi knows many Bedrock model IDs, but a catalog entry does not prove that your AWS account can invoke one. A model may also work only in another region. The router's deployed list changes independently from Pi's configured router models. Orchard compares these sources and tests calls before writing a region map.
 
-- AWS Bedrock entitlements differ per region and change over time. pi ships a static catalog (~180 ids), but only a fraction of it works in your account.
-- The ai-model-router's deployed set changes without notice, while pi's router entries were a hand-written list. When the two drift apart, the picker offers models that no longer exist and hides models that do.
-
-The result: you pick a model and the call fails, while working models stay invisible.
-
-pi-model-sync fixes this by measuring instead of assuming. It fetches what each provider actually offers, probes every candidate live through pi, and reports the result in one table.
-
-It replaces the bash script `pi/.pi/agent/bin/sync-enabled-models.sh` in https://github.com/luiul/dotfiles (parity verified).
-
-## Use cases
-
-- **"What can I use right now?"** Run `pi-model-sync report`: one table across both providers, with a flag per availability level and a drift section.
-- **A new model appears on the router.** `pi-model-sync sync` regenerates pi's `models.json` from the live gateway. No hand-editing, nothing missed.
-- **A model is retired or renamed.** The report flags `enabledModels` patterns that no longer match anything.
-- **A Bedrock model only works outside your default region.** `bedrock-models.json` records the working region per model, which the `bedrock-region-sync` pi extension and the `pi-use` / `pi-region` zsh helpers consume.
+Pi already has a model picker. Orchard does not replace it or choose your default. Pi's picker can show models that Orchard has not verified, so check `orchard report` when availability matters.
 
 ## Concepts
 
-**Two providers.** `amazon-bedrock` is pi's built-in provider (AWS SSO auth, one active region per process). `ai-model-router` is an internal LiteLLM gateway (API key auth, no regions, the gateway routes to backends itself).
+These terms are independent facts, not steps in a ladder:
 
-**The availability ladder.** "Available" has five meanings here, each a subset of the previous one:
+- **Catalog model:** Pi lists its ID in `pi --list-models`. This is not proof of access.
+- **Listed model:** Bedrock lists a model or inference profile in a scanned AWS region. This is a discovery hint, not proof that an invocation works.
+- **Deployed model:** The router lists it in `/v1/models`. It might not yet be configured in Pi.
+- **Candidate:** An ID Orchard will probe. This includes discovered Bedrock catalog models, catalog models matched by the curated scope, previously mapped Bedrock models still in Pi's catalog, and deployed router models. A candidate may fail.
+- **Invocable model:** A probe through Pi returned a usable response. For Bedrock, Orchard records the region that worked. Only a successful probe earns this label.
+- **Scoped model:** Pi's own resolver includes it in the startup and cycling scope. Patterns in `enabledModels` can include a provider, a thinking pin, a case-insensitive glob, or a fuzzy model name. If the setting is absent or empty, or no patterns resolve, Pi cycles through all authenticated models. Scope does not prove a model works. Pi's `/model` can still show other models.
+- **Unknown:** Discovery failed, probing did not run, or the outcome is uncertain. Do not treat unknown as a confirmed failure.
 
-1. **Catalog**: pi knows the id (source: `pi --list-models`).
-2. **Entitled** (Bedrock) / **deployed** (router): the account may call it in a region, or the gateway serves it right now.
-3. **Candidate**: in the catalog and entitled/deployed, so worth probing.
-4. **Invocable**: answers a live probe through pi. The only reliable proof; entitlement alone cannot predict per-model failures.
-5. **Enabled**: offered in `/model` and Ctrl+P, via `enabledModels` in `settings.json`.
+Orchard scans `eu-west-1`, `us-east-1`, `ap-northeast-1`, and `ap-southeast-2` by default. It does **not** filter results to EU or US. `jp.`, `apac.`, `au.`, global, and models without a region prefix can be probed. A model found in more than one region gets another try when its first probe fails. The curated Pi scope remains a human choice: adding a model to the region map does not add it to `enabledModels`.
 
-**Three artifacts.** `sync` writes `enabledModels` in `settings.json` (validated in place, never auto-edited), `bedrock-models.json` (model to region map), and the router section of `models.json` (generated from the live gateway).
+## Use
 
-**The model registry.** Hand-maintained model knowledge lives in the dotfiles, stowed at `pi/.pi/agent/model-registry.json`, not in this repo:
+Build from this checkout with `go run ./cmd/orchard <command>`, or install it with `make install` after reviewing the changes. The older `pi-model-sync` command is still a separate Python program until it is retired.
 
-- `probeRegionOverrides`: pin a Bedrock model id to the region it probes from (for globally named inference profiles only enabled in one region for this account).
-- `routerModelOverrides`: human authority over router metadata. It wins over the live gateway data and pi's bundled provider data, both to fill nulls and to correct values that are present but wrong (example: the gateway advertised `maxTokens` 384000 for `deepseek-ai/DeepSeek-V4-Flash-0731`, whose backend rejects anything over 262144). Any subset of a `models.json` router entry.
+- `orchard fetch`: show catalog and provider discovery counts without model calls. Use `--catalog-only` to skip AWS and the router.
+- `orchard probe`: test candidates without writing configuration. Each call can incur provider cost. Tune with `--timeout`, `--concurrency`, and `--fail-circuit`.
+- `orchard report`: show model status and scope gaps without writing files. It probes by default. Use `--no-probe` for discovery only or `--json` for scripts.
+- `orchard sync --dry-run`: probe and show proposed ID and region changes. It changes no files.
+- `orchard sync`: probe, check the old map and all sources, then write configuration when the evidence is complete.
 
-**Safety rules.** The tool never runs `aws sso login` (it checks once, prints the fix, and exits). Probes are classified by output text, never by exit code (pi can exit 0 even when a model call fails). A circuit breaker aborts the run on repeated systemic failures instead of hammering a broken account. An unreachable router gateway (no VPN) degrades router rungs to "unknown" instead of failing; `--strict` turns that into an error.
+`--strict` makes `fetch` and `report` fail when the router is unreachable. `sync` always refuses incomplete discovery. It does not accept `--no-probe`.
 
-The full vocabulary, with every term mapped to a concrete file, command, or API, lives in `docs/model-availability-vocabulary.md` in https://github.com/luiul/dotfiles.
+Commands show discovery stages, probe starts, and completed results on stderr. `report --json` keeps stdout as one JSON document. If the circuit breaker stops probing, the report still includes completed results and unknown models, sets `meta.circuitTripped` to `true`, and exits with code 1. Stderr includes the failure reasons; Orchard does not log in or retry the batch automatically.
 
-## Installation
+Once a model is configured, run `/model` inside Pi. Press `Ctrl+S` there to save the default for new sessions. Pi may update its live `~/.pi/agent/settings.json`; copy that file to `~/dotfiles/pi/.pi/agent/settings.json` to refresh the tracked snapshot. Orchard never edits either settings file.
 
-```sh
-uv tool install ~/projects/personal/pi-model-sync
-```
+## What sync changes
 
-Or run without installing:
+- `~/dotfiles/pi/.pi/agent/bedrock-models.json`: a `model ID → working region` map. The Pi `bedrock-region-sync.ts` extension and zsh `pi-use` commands read it.
+- `~/dotfiles/pi/.pi/agent/models.json`: only the router's model definitions, generated from the live gateway. Other provider settings and formatting remain intact.
 
-```sh
-uv run --project ~/projects/personal/pi-model-sync pi-model-sync --help
-```
+Orchard reads the curated `enabledModels` patterns from the dotfiles settings snapshot. For probe coverage, it also includes models selected by the live Pi scope. It reports verified models outside the snapshot scope, but it never changes either scope. If the live settings and snapshot differ, sync stops before probing. Every deployed router ID is probed against the generated definitions in an isolated temporary Pi configuration. Sync writes those definitions only when every router probe passes. If `models.json` or the scope changes during probing, sync stops rather than applying a different configuration.
 
-## Usage
+Each file is replaced through a temporary file in its directory. The two files are **not** one transaction. If the second write fails, the first may already have changed. A sync refuses missing or malformed source data, skipped or systemic probes, and any previously mapped Bedrock model that it could not verify again. A failed run leaves the existing files alone unless a file write itself fails after another succeeded.
 
-- `pi-model-sync fetch`: refresh all sources (pi catalog, Bedrock entitlements per scanned region, router deployment). `--catalog-only` prints just the parsed pi catalog.
-- `pi-model-sync probe`: probe candidates live through pi, with a circuit breaker for systemic failures.
-- `pi-model-sync report`: the unified availability table plus drift sections (`--json` for scripting, `--no-probe` to skip live probes).
-- `pi-model-sync sync`: the full pipeline, then write artifacts. Flags: `--dry-run`, `--no-probe`, `--strict`.
+Orchard uses Pi's completed JSON assistant response to judge a probe. The provider and model must match the request. An empty, malformed, failed, or unfinished response is not verified. A successful response can contain words such as “error” without being treated as a failure. Probes turn off tools, extensions, project configuration, and context files. A short text probe verifies this invocation path, not every tool or image capability.
 
-Exit 0 even with drift: drift is information, not failure. Non-zero exits mean the run itself failed (SSO invalid, circuit breaker tripped, `--strict` router unreachable).
+## Network access
 
-Environment, same contract as the retired bash script: `AWS_PROFILE` (default `sso-bedrock`), `AWS_REGION` (default `eu-west-1`), `BEDROCK_REGIONS` (default `us-east-1 ap-northeast-1 ap-southeast-2`), `PROBE_TIMEOUT` (45), `PROBE_CONCURRENCY` (3), `PROBE_FAIL_CIRCUIT` (6). Paths: `DOTFILES`, `PI_SETTINGS`, `BEDROCK_MODELS_JSON`, `MODELS_JSON`, `MODEL_REGISTRY`. The router needs `AI_MODEL_ROUTER_API_KEY`; if unset it is read from gitignored `~/dotfiles/.env`.
+Orchard does not open network connections itself. It runs the installed `aws` CLI for AWS identity and Bedrock discovery, `curl` for router listings and metadata, and Pi for model probes. These tools still need network access and their own LuLu rules. `go run` can create a new Orchard executable each time, but that executable no longer needs outbound permission.
+
+The Pi catalog is read offline. Refresh it explicitly with `pi update --models` when needed. Live AWS and router discovery still needs connectivity; `fetch --catalog-only` skips those requests. Orchard does not change firewall rules or disable TLS verification.
+
+## Configuration and credentials
+
+`DOTFILES`, `PI_SETTINGS`, `BEDROCK_MODELS_JSON`, `MODELS_JSON`, and `MODEL_REGISTRY` override file paths. `AWS_PROFILE` defaults to `sso-bedrock`, `AWS_REGION` to `eu-west-1`, and `BEDROCK_REGIONS` replaces the extra regions to scan (set it to an empty string to scan only the default region). `PROBE_TIMEOUT`, `PROBE_CONCURRENCY`, and `PROBE_FAIL_CIRCUIT` control live probes. `ROUTER_BASE_URL` must match the router endpoint in `models.json`, and `AI_MODEL_ROUTER_API_KEY` supplies the gateway credential. The router key can also come from the gitignored `~/dotfiles/.env` file. Do not commit keys.
+
+Orchard checks AWS identity, but never runs `aws sso login`. If that check fails, sign in yourself with `aws sso login --profile sso-bedrock`. An unreachable router or failed region scan is reported, not treated as an empty deployment. Router probes use a temporary config with no user extensions or stored credentials.
 
 ## Development
 
-```sh
-uv sync
-uv run pytest
-uv run ruff check
-uv run ty check
-```
+Use `make check` for format, build, vet, race tests, and golangci-lint. Tests use captured Pi and provider fixtures plus local fakes, not live settings or AWS writes. `aws` CLI v2, `curl`, Node, and Pi must be installed. Run `ORCHARD_PI_INTEGRATION=1 go test ./internal/catalog` to test scope matching against the installed Pi without model calls. The scope helper uses Pi's own implementation rather than copying its matching rules. It uses Pi 1.0.4's SDK and fails if that API is unavailable. See the [shared Go conventions](https://github.com/luiul/dashkit/blob/main/CONVENTIONS.md) for the repo family. Orchard keeps domain code in `internal/` and the CLI in `cmd/orchard/`.
 
-Tests run fully offline against captured fixtures in `tests/fixtures/` (real `pi --list-models` output, AWS API responses per region, router gateway responses, and live probe outputs).
-
-## License
-
-MIT, see [LICENSE](LICENSE).
+The [legacy Python package](docs/pi-model-sync.md) stays in `src/` during the transition. Its report schema differs from the simplified Go report. Compare shared IDs, probe outcomes, and proposed changes before removing it.

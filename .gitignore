@@ -6,3 +6,7 @@ dist/
 build/
 .venv/
 .env
+/orchard
+/orchard-build
+*.test
+*.out
